@@ -6,6 +6,7 @@
     CSS FORMATTING
 */
 
+// FUNCTIONS
 function addition(x, y){
     return x + y;
 }
@@ -22,6 +23,8 @@ function division(x, y){
     return x / y;
 }
 
-function operate(){
+function operate(x, y, operator){
     return 0;
 }
+// FUNCTIONS
+

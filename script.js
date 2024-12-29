@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Attach event listeners to equals button, store displayed value to y and display result of operation
+    // Attach event listener to equals button, store displayed value to y and display result of operation
     equalsButton.addEventListener("click", () => {
         if (x !== null && operator !== null){
             y = parseInt(displayElement.textContent); // if x and operator exist, store displayed value as y
@@ -100,4 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
             resetDisplay = true; // prepare display for next operation
         };
     });
+
+    // Attach event listener to clear button, allowing user to clear display
 });

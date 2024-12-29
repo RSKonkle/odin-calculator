@@ -5,8 +5,8 @@
     ADD NUMBER KEYS
     CSS FORMATTING
 */
-
-// FUNCTIONS
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+///// FUNCTIONS /////
 // List of functions: add, subtract, multiply, divide, operate
 function add(x, y){
     return x + y;
@@ -34,7 +34,7 @@ function operate(x, y, operator){
         case "*":
             return multiply(x, y);
         case "/":
-            // read as "return (if y is not equal to 0) divide(x,y) : (otherwise), return usererror..."
+            // read as "return (if y is not equal to 0) divide(x,y) : (otherwise), return UserError..."
             return y !== 0 ? divide(x,y) : "UserError: Cannot divide by zero.";
         default:
             return "UserError: Invalid operator.";
@@ -42,11 +42,17 @@ function operate(x, y, operator){
 }
 
 function display(value){
-    return 0
+    // Reset display if needed
+    if (resetDisplay){ // same as resetDisplay == true
+        displayElement.textContent = "";
+        resetDisplay = false;
+    }
+
+    // Append the selected value to the display
+    displayElement.textContent += value;
 }
-// FUNCTIONS
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-// LOGIC
+///// LOGIC /////
 // Get references to the display and buttons
 const displayElement = document.querySelector(".display");
 const numberButtons = document.querySelectorAll(".number");
@@ -64,4 +70,4 @@ let clearDisplay = false;
 numberButtons.forEach(button => {
     button.addEventListener("click", () => display(button.dataset.value));
 })
-//LOGIC
+

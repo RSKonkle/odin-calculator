@@ -81,7 +81,7 @@ operatorButtons.forEach(button => {
             x = operate(x, y, operator);
         } else {console.log("Hmmmm. Something isn't quite working.");}; // console debugging
         operator = button.dataset.operator; // store clicked operator as variable
-        resetDisplay = true; // allows clearing of old values
+        clearDisplay = true; // allows clearing of old values
     });
 });
 

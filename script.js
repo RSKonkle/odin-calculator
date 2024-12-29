@@ -53,4 +53,10 @@ const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator"); 
 const equalsButton = document.querySelector(".equals");
 const clearButton = document.querySelector(".clear");
+
+// Establish null variables for storing values
+let x = null;
+let y = null;
+let operator = null;
+let clearDisplay = false;
 //LOGIC

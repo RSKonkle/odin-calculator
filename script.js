@@ -75,14 +75,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Attach event listeners to operator buttons, store displayed value to x or y
     operatorButtons.forEach(button => {
         button.addEventListener("click", () => {
-            if (x === null){
-                x = parseInt(displayElement.textContent); // if x is null, store displayed value as x
-            } else if (y === null && operator){
-                y = parseInt(displayElement.textContent); // if y is null and operator exists, store displayed value as y
+            if (x === null) { // If x is null, store the current display value as x
+                x = parseFloat(displayElement.textContent); // if x is null, store displayed value as x
+            } 
+            else if (y === null && operator) { // If y is null but operator exists, complete the current operation and chain
+                y = parseFloat(displayElement.textContent); // if y is null and operator exists, store displayed value as y
                 x = operate(x, y, operator); // store intermediate result in x
                 displayElement.textContent = x; // display intermediate result
                 y = null; // reset y
-            } else {console.log("Hmmmm. Something isn't quite working.");}; // console debugging
+            } 
+            // If no operator is set after pressing equals, just set the new operator
             operator = button.dataset.operator; // store clicked operator as variable
             resetDisplay = true; // allows clearing of old values
         });

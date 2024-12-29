@@ -41,7 +41,7 @@ function operate(x, y, operator){
     }  
 }
 
-function display(){
+function display(value){
     return 0
 }
 // FUNCTIONS
@@ -59,4 +59,9 @@ let x = null;
 let y = null;
 let operator = null;
 let clearDisplay = false;
+
+// Attach event listeners to number buttons and call display function to display number values within div
+numberButtons.forEach(button => {
+    button.addEventListener("click", () => display(button.dataset.value));
+})
 //LOGIC

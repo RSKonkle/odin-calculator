@@ -102,4 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Attach event listener to clear button, allowing user to clear display
+    clearButton.addEventListener("click", () => {
+        displayElement.textContent = "";
+        x, y, operator = null;
+    })
 });

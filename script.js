@@ -64,7 +64,7 @@ const clearButton = document.querySelector(".clear");
 let x = null;
 let y = null;
 let operator = null;
-let clearDisplay = false;
+let resetDisplay = false;
 
 // Attach event listeners to number buttons and call display function to display number values within div
 numberButtons.forEach(button => {
@@ -78,10 +78,12 @@ operatorButtons.forEach(button => {
             x = parseInt(displayElement.textContent); // if x is null, store displayed value as x
         } else if (y === null && operator){
             y = parseInt(displayElement.textContent); // if y is null and operator exists, store displayed value as y
-            x = operate(x, y, operator);
+            x = operate(x, y, operator); // store intermediate result in x
+            displayElement.textContent = x; // display intermediate result
+            y = null; // reset y
         } else {console.log("Hmmmm. Something isn't quite working.");}; // console debugging
         operator = button.dataset.operator; // store clicked operator as variable
-        clearDisplay = true; // allows clearing of old values
+        resetDisplay = true; // allows clearing of old values
     });
 });
 
@@ -92,7 +94,7 @@ equalsButton.addEventListener("click", () => {
         const result = operate(x, y, operator); // operate and store the result
         displayElement.textContent = result; // display result for user
         x = result; // store result as x for chaining operations
-        y = null; // reset
-        operator = null; // reset
+        y = null; // reset y
+        operator = null; // reset operator
     }
 })

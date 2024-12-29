@@ -45,8 +45,12 @@ function display(){
     return 0
 }
 // FUNCTIONS
-
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 // LOGIC
 // Get references to the display and buttons
-
+const displayElement = document.querySelector(".display");
+const numberButtons = document.querySelectorAll(".number");
+const operatorButtons = document.querySelectorAll(".operator"); 
+const equalsButton = document.querySelector(".equals");
+const clearButton = document.querySelector(".clear");
 //LOGIC

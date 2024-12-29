@@ -7,6 +7,7 @@
 */
 
 // FUNCTIONS
+// List of functions: add, subtract, multiply, divide, operate
 function add(x, y){
     return x + y;
 }
@@ -45,3 +46,7 @@ function display(){
 }
 // FUNCTIONS
 
+// LOGIC
+// Get references to the display and buttons
+
+//LOGIC

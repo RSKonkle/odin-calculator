@@ -78,7 +78,7 @@ operatorButtons.forEach(button => {
             x = parseInt(displayElement.textContent); // if x is null, store displayed value as x
         } else if (y === null && operator){
             y = parseInt(displayElement.textContent); // if y is null and operator exists, store displayed value as y
-            operate(x, y, operator);
+            x = operate(x, y, operator);
         } else {console.log("Hmmmm. Something isn't quite working.");}; // console debugging
         operator = button.dataset.operator; // store clicked operator as variable
         resetDisplay = true; // allows clearing of old values

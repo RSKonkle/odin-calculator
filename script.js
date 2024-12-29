@@ -24,7 +24,7 @@ function divide(x, y){
 }
 
 function operate(x, y, operator){
-    // instead of using if/else statements, used switch to set conditions on each operator
+    // instead of using if/else statements, used switch to set conditions on each operator with default response if non-operator is used
     switch(operator){
         case "+":
             return add(x, y);
@@ -33,6 +33,7 @@ function operate(x, y, operator){
         case "*":
             return multiply(x, y);
         case "/":
+            // read as "return (if y is not equal to 0) divide(x,y) : (otherwise), return usererror..."
             return y !== 0 ? divide(x,y) : "UserError: Cannot divide by zero.";
         default:
             return "UserError: Invalid operator.";

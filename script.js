@@ -54,48 +54,50 @@ function display(value){
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 ///// LOGIC /////
 // Get references to the display and buttons
-const displayElement = document.querySelector(".display");
-const numberButtons = document.querySelectorAll(".number");
-const operatorButtons = document.querySelectorAll(".operator"); 
-const equalsButton = document.querySelector(".equals");
-const clearButton = document.querySelector(".clear");
+document.addEventListener("DOMContentLoaded", () => {
+    const displayElement = document.querySelector(".display");
+    const numberButtons = document.querySelectorAll(".number");
+    const operatorButtons = document.querySelectorAll(".operator"); 
+    const equalsButton = document.querySelector(".equals");
+    const clearButton = document.querySelector(".clear");
 
-// Establish null variables for storing values
-let x = null;
-let y = null;
-let operator = null;
-let resetDisplay = false;
+    // Establish null variables for storing values
+    let x = null;
+    let y = null;
+    let operator = null;
+    let resetDisplay = false;
 
-// Attach event listeners to number buttons and call display function to display number values within div
-numberButtons.forEach(button => {
-    button.addEventListener("click", () => display(button.dataset.value)); // display the respective html data-value
-})
+    // Attach event listeners to number buttons and call display function to display number values within div
+    numberButtons.forEach(button => {
+        button.addEventListener("click", () => display(button.dataset.value)); // display the respective html data-value
+    })
 
-// Attach event listeners to operator buttons, store displayed value to x or y
-operatorButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        if (x === null){
-            x = parseInt(displayElement.textContent); // if x is null, store displayed value as x
-        } else if (y === null && operator){
-            y = parseInt(displayElement.textContent); // if y is null and operator exists, store displayed value as y
-            x = operate(x, y, operator); // store intermediate result in x
-            displayElement.textContent = x; // display intermediate result
-            y = null; // reset y
-        } else {console.log("Hmmmm. Something isn't quite working.");}; // console debugging
-        operator = button.dataset.operator; // store clicked operator as variable
-        resetDisplay = true; // allows clearing of old values
+    // Attach event listeners to operator buttons, store displayed value to x or y
+    operatorButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            if (x === null){
+                x = parseInt(displayElement.textContent); // if x is null, store displayed value as x
+            } else if (y === null && operator){
+                y = parseInt(displayElement.textContent); // if y is null and operator exists, store displayed value as y
+                x = operate(x, y, operator); // store intermediate result in x
+                displayElement.textContent = x; // display intermediate result
+                y = null; // reset y
+            } else {console.log("Hmmmm. Something isn't quite working.");}; // console debugging
+            operator = button.dataset.operator; // store clicked operator as variable
+            resetDisplay = true; // allows clearing of old values
+        });
     });
-});
 
-// Attach event listeners to equals button, store displayed value to y and display result of operation
-equalsButton.addEventListener("click", () => {
-    if (x !== null && operator !== null){
-        y = parseInt(displayElement.textContent); // if x and operator exist, store displayed value as y
-        const result = operate(x, y, operator); // operate and store the result
-        displayElement.textContent = result; // display result for user
-        x = result; // store result as x for chaining operations
-        y = null; // reset y
-        operator = null; // reset operator
-        resetDisplay = true; // prepare display for next operation
-    };
+    // Attach event listeners to equals button, store displayed value to y and display result of operation
+    equalsButton.addEventListener("click", () => {
+        if (x !== null && operator !== null){
+            y = parseInt(displayElement.textContent); // if x and operator exist, store displayed value as y
+            const result = operate(x, y, operator); // operate and store the result
+            displayElement.textContent = result; // display result for user
+            x = result; // store result as x for chaining operations
+            y = null; // reset y
+            operator = null; // reset operator
+            resetDisplay = true; // prepare display for next operation
+        };
+    });
 });

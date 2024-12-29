@@ -7,24 +7,36 @@
 */
 
 // FUNCTIONS
-function addition(x, y){
+function add(x, y){
     return x + y;
 }
 
-function subtraction(x, y){
+function subtract(x, y){
     return x - y;
 }
 
-function multiplication(x, y){
+function multiply(x, y){
     return x * y;
 }
 
-function division(x, y){
+function divide(x, y){
     return x / y;
 }
 
 function operate(x, y, operator){
-    return 0;
+    // instead of using if/else statements, used switch to set conditions on each operator
+    switch(operator){
+        case "+":
+            return add(x, y);
+        case "-":
+            return subtract(x, y);
+        case "*":
+            return multiply(x, y);
+        case "/":
+            return y !== 0 ? divide(x,y) : "UserError: Cannot divide by zero.";
+        default:
+            return "UserError: Invalid operator.";
+    }  
 }
 // FUNCTIONS
 

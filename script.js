@@ -71,3 +71,16 @@ numberButtons.forEach(button => {
     button.addEventListener("click", () => display(button.dataset.value));
 })
 
+// Attach event listeners to operator buttons, store displayed values based on null variables (x and y having values)
+operatorButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        if (x === null){
+            x = parseInt(displayElement.textContent);
+        } else if (y === null && operator){
+            y = parseInt(displayElement.textContent);
+            operate(x, y, operator);
+        } else {console.log("Hmmmm. Something isn't quite working.");};
+        operator = button.dataset.operator;
+        resetDisplay = true;
+    });
+});

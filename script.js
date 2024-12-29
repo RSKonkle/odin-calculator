@@ -39,5 +39,9 @@ function operate(x, y, operator){
             return "UserError: Invalid operator.";
     }  
 }
+
+function display(){
+    return 0
+}
 // FUNCTIONS
 

@@ -96,5 +96,6 @@ equalsButton.addEventListener("click", () => {
         x = result; // store result as x for chaining operations
         y = null; // reset y
         operator = null; // reset operator
+        resetDisplay = true; // prepare display for next operation
     }
 })

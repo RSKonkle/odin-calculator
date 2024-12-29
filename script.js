@@ -97,5 +97,5 @@ equalsButton.addEventListener("click", () => {
         y = null; // reset y
         operator = null; // reset operator
         resetDisplay = true; // prepare display for next operation
-    }
-})
+    };
+});

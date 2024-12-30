@@ -1,6 +1,6 @@
 /* 
     TODO LIST:
-    1. Add decimal point functionality
+    1. Add decimal point functionality (DONE)
     2. Round display to prevent container overflow
     3. EXTRA: add respective keyboard controls for calc
     4. stylize CSS to create aesthetic UI and design
@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const operatorButtons = document.querySelectorAll(".operator"); 
     const equalsButton = document.querySelector(".equals");
     const clearButton = document.querySelector(".clear");
+    const decimalButton = document.querySelector(".decimal");
 
     // Establish null variables for storing values
     let x = null;
@@ -104,5 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
     clearButton.addEventListener("click", () => {
         displayElement.textContent = "";
         x = y = operator = null;
-    })
-});
+    });
+
+    // Attach event listener to decimal button
+    decimalButton.addEventListener("click", () => {
+        if (!displayElement.textContent.includes(".")) {
+            displayElement.textContent += "."; // Append decimal
+        }
+        resetDisplay = false; // Ensure the display is not reset
+    });
+
+    
+})

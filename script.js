@@ -1,5 +1,6 @@
 /* 
     TODO LIST:
+    0. Add case where user can overwrite current operator if another is pressed (i.e. Oops! Meant to press minus, not plus!)
     1. Add decimal point functionality
     2. Round display to prevent container overflow
     3. EXTRA: add respective keyboard controls for calc

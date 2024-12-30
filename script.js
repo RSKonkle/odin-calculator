@@ -1,9 +1,9 @@
 /* 
-    OBJECTIVES: FIVE TOTAL FUNCTIONS
-    ADD, SUBTRACT, MULTIPLY, DIVIDE, OPERATE (EQUALS)
-    CREATE REACTIVE DISPLAY
-    ADD NUMBER KEYS
-    CSS FORMATTING
+    TODO LIST:
+    1. Add decimal point functionality
+    2. Round display to prevent container overflow
+    3. EXTRA: add respective keyboard controls for calc
+    4. stylize CSS to create aesthetic UI and design
 */
 document.addEventListener("DOMContentLoaded", () => {
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/

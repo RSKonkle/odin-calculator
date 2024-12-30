@@ -11,6 +11,13 @@ body {
     flex-direction: column; /* Stack header and calculator vertically */
     align-items: center; /* Center content horizontally */
     height: 100vh;
+
+    /* Vignette and Prison Bars */
+    background-image: 
+    radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.7) 100%), /* Vignette */
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.5) 5px, transparent 5px, transparent 20px); /* Bars */
+    background-size: cover; /* Ensure it covers the full page */
+    background-blend-mode: multiply; /* Combine the two effects */
 }
 
 /* Calculator Container */

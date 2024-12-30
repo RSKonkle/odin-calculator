@@ -1,2 +1,98 @@
 /* STYLE SHEET */
 
+/* Background and Text */
+body {
+    font-family: 'UnifrakturMaguntia', sans-serif;
+    background-color: #1e1a27; /* Dusky Slate Gray with Purple Tint */
+    color: #e5e5e5; /* Ashen White */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack header and calculator vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh;
+}
+
+/* Calculator Container */
+.calculator {
+    background-color: #0e0e10; /* Shadow Black */
+    border: 2px solid #700d0d; /* Blood Crimson */
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    display: grid; /* Use grid layout */
+    grid-template-rows: auto 1fr; /* Display occupies one row, buttons fill remaining space */
+    gap: 10px; /* Spacing between grid items */
+}
+
+/* Display */
+.display {
+    font-family: 'UnifrakturMaguntia', sans-serif;
+    background-color: #264a4b; /* Spectral Glow Green */
+    color: #e5e5e5; /* Ashen White */
+    border: 1px solid #700d0d; /* Blood Crimson */
+    padding: 15px;
+    font-size: 2.5rem;
+    text-align: right;
+    border-radius: 5px;
+    height: 50px; /* Fixed height */
+    display: flex; /* Align text vertically */
+    align-items: center;
+    justify-content: flex-end; /* Right-align numbers */
+    overflow: hidden; /* Prevent text overflow */
+    white-space: nowrap; /* Keep numbers on one line */
+}
+
+/* Buttons Container */
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(4, 1fr) auto; /* 4 rows for buttons + 1 for equals */
+    gap: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #700d0d; /* Blood Crimson */
+    color: #e5e5e5; /* Ashen White */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex; /* Align text */
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Uniform button height */
+}
+
+button.equals {
+    grid-column: span 4; /* Stretch across all 4 columns */
+    height: 60px; /* Optional: Make it slightly taller for prominence */
+}
+
+button:hover {
+    background-color: #d9644a; /* Dusky Ember Orange */
+    color: #cab5d9; /* Faint Lavender */
+}
+
+.header {
+    margin-top: 20px; /* Space above the header */
+    margin-bottom: 50px; /* Distance between header and calculator */
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3rem; /* Large title */
+    color: #700d0d; /* Blood Crimson */
+    text-shadow: 2px 2px 4px #000000; /* Shadow for a spooky effect */
+    margin: 0;
+}
+
+.unifrakturmaguntia-regular { /* Google Font recommended css for font */
+    font-family: "UnifrakturMaguntia", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

@@ -81,10 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } 
             else if (y === null && operator) { // If y is null but operator exists, complete the current operation and chain
                 y = parseFloat(displayElement.textContent); // if y is null and operator exists, store displayed value as y
-                x = operate(x, y, operator); // store intermediate result in x
-                displayElement.textContent = x; // display intermediate result
-                y = null; // reset y
-            } 
+            }
             // If no operator is set after pressing equals, just set the new operator
             operator = button.dataset.operator; // store clicked operator as variable
             resetDisplay = true; // allows clearing of old values

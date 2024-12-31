@@ -52,6 +52,28 @@ document.addEventListener("DOMContentLoaded", () => {
         // Append the selected value to the display
         displayElement.textContent += value;
     }
+
+    function formatResult(value) {
+        const maxLength = 16; // Maximum characters allowed on the display
+    
+        // Convert the number to a string
+        let valueStr = value.toString();
+    
+        // If the result is too long, round or truncate it
+        if (valueStr.length > maxLength) {
+            // If it's a decimal number, limit the number of decimal places
+            if (valueStr.includes(".")) {
+                const decimalPlaces = maxLength - valueStr.split(".")[0].length - 1; // Calculate max decimal places
+                return parseFloat(value).toFixed(Math.max(0, decimalPlaces)); // Round to fit
+            }
+            // Otherwise, truncate the integer part
+            return parseFloat(valueStr.slice(0, maxLength));
+        }
+    
+        // Return the value as-is if it fits
+        return value;
+    }
+    
     /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
     ///// LOGIC /////
     // Get references to the display and buttons
@@ -93,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (x !== null && operator !== null){
             y = parseInt(displayElement.textContent); // if x and operator exist, store displayed value as y
             const result = operate(x, y, operator); // operate and store the result
-            displayElement.textContent = result; // display result for user
+            displayElement.textContent = formatResult(result); // display result for user
             x = result; // store result as x for chaining operations
             y = null; // reset y
             operator = null; // reset operator
